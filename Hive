@@ -3,10 +3,17 @@ Hcatalog  :
 --> Provide Access to Hive meta store , so other tools can read and write to hive's warehouse.
 
 Partitioning: 
---> Partition is created for coloumn.
+--> Partition is created for unique value of coloumn.
 --> It eliminates data base on where clause
 --> Helps to execute faster on basis of common range filtering 
-
+--> Prune data when executing query for fast processing
+--> Dynamic Partition : --> Hive automatically identifies partition
+                        --> Used for ETL data flow pipeline
+                        --> Complete data is read and partitioned through Map reduce job 
+--> Static Partition : --> Requires partition name during Insert statement
+                       --> Used for loading large files (faster than dynamic partiton)
+                       --> Partition is added to the table, file is moved into the static partition
+                       
 Bucketing:
 --> Organize data inside partition
 --> Helps in joining columns 
