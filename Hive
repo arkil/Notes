@@ -1,0 +1,21 @@
+Hcatalog  : 
+--> Share Data structure with external system 
+--> Provide Access to Hive meta store , so other tools can read and write to hive's warehouse.
+
+Partitioning: 
+--> Partition is created for coloumn.
+--> It eliminates data base on where clause
+--> Helps to execute faster on basis of common range filtering 
+
+Bucketing:
+--> Organize data inside partition
+--> Helps in joining columns 
+--> Partition is directory and buckets are files inside that
+--> Buckets can be limited to a specific 
+
+
+
+
+
+
+
