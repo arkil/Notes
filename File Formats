@@ -1,0 +1,28 @@
+
+** Columnar format are good for data analytics
+
+ORC(Optimized Row Columnar):
+
+--> Stores data compact and enables skipping over irrelevant parts without need of complex indicies
+--> Stores collection of row in a  file, and with in collection of row data is stored in Columnar format which allows parallel processing of row collections across a cluster
+--> Larger block size reduces load on Name node(256MB)
+--> Lightweight indexing and basic statistic enabled
+--> ORC file contains rows data in groups called as Stripe
+
+
+Sequence File:
+
+--> Flat files ,consisting of key-value pairs are in binary format.
+--> When Hive converts queries to MapReduce jobs, it decides on the appropriate key-value pairs to be used for a given record
+--> Combines two or more small files to form a sequence of files
+--> Types : Uncompressesd, Record compressed(vlaues) , block compressed(Key values)
+
+RCFile(Record Columnar File) :
+
+--> It is binary file format key value pair  which offers high compression rate on the top of the rows.
+--> It is used when we want to perform operations on multiple rows at a time.
+--> RCFILE stores columns of a table in form of record in a columnar manner. Partitions rows horizontally into row splits and then it vertically partitions each row split in a columnar way.
+--> It stores metadata of a row split, as the key part of a record, and all the data of a row split as the value part.
+
+
+
